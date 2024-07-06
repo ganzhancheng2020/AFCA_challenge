@@ -12,6 +12,11 @@ nest_asyncio.apply()
 
 
 # In[ ]:
+def read_json(path):
+    with open(path, 'r') as file:
+        content= json.load(file)  # 这将返回一个列表
+    
+    return content
 
 
 # load query
@@ -21,6 +26,8 @@ def read_jsonl(path):
         for obj in json_file.iter(type=dict, skip_invalid=True):
             content.append(obj)
     return content
+
+
 
 
 # write result

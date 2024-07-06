@@ -1,2 +1,5 @@
 openai
 python-dotenv
+dashscope
+jsonlines
+tqdm

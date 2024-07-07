@@ -14,8 +14,7 @@ nest_asyncio.apply()
 # In[ ]:
 def read_json(path):
     with open(path, 'r') as file:
-        content= json.load(file)  # 这将返回一个列表
-    
+        content = json.load(file)  # 这将返回一个列表
     return content
 
 
@@ -28,15 +27,18 @@ def read_jsonl(path):
     return content
 
 
-
-
 # write result
 def write_jsonl(results,submission_id):
-    with open(f'result{submission_id}.jsonl', 'w',encoding='utf-8') as outfile:
+    with open(f'result{submission_id}.json', 'w',encoding='utf-8') as outfile:
         for entry in results:
             json.dump(entry, outfile, ensure_ascii=False)
             outfile.write('\n')
 
+
+# w
+def write_json(data, commit):
+    with open(f'{commit}.json', 'w',encoding='utf-8') as file:
+        json.dump(data, file)
 
 # In[ ]:
 

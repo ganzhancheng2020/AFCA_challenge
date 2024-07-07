@@ -37,7 +37,7 @@ def write_jsonl(results,submission_id):
 
 # w
 def write_json(data, commit):
-    with open(f'{commit}.json', 'w',encoding='utf-8') as file:
+    with open(f'result/{commit}.json', 'w',encoding='utf-8') as file:
         json.dump(data, file)
 
 # In[ ]:

@@ -3,14 +3,15 @@ def get_sys_prompt():
     return sys_prompt
 
 
-def get_qa_prompt(clause, query):
+def get_qa_prompt(name,clause,query):
     qa_prompt = '''\
-保险条款: """{}"""
+产品名称："""{}"""
+保险条款："""{}"""
 用户问题："""{}"""
-回答规则："""仅使用保险条款中的语句回答问题"""
+回答规则："""仅使用产品名称及保险条款中的语句回答问题"""
 回答:\
 '''
-    return qa_prompt.format(clause, query)
+    return qa_prompt.format(name,clause,query)
 
 qa_prompt1 = '''从保险条款
 ==========

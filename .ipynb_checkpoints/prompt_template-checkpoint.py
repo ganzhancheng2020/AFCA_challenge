@@ -2,6 +2,14 @@ def get_sys_prompt():
     sys_prompt = '''你是一个基于保险条款的问答系统，对用户提出的有关保险条款的问题给予准确、清晰的回答。'''
     return sys_prompt
 
+def get_input_template(name,clause,query):
+    input_template = '''\
+产品名称："""{}"""
+保险条款："""{}"""
+用户问题："""{}"""\
+'''
+    return input_template.format(name,clause,query)
+
 
 def get_qa_prompt(name,clause,query):
     qa_prompt = '''\

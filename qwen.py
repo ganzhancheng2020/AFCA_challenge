@@ -3,6 +3,7 @@ from modelscope import snapshot_download
 from modelscope import AutoModelForCausalLM, AutoTokenizer
 from prompt_template import get_sys_prompt
 model_dir = snapshot_download('qwen/Qwen2-7B-Instruct')
+lora_path = './output/Qwen2_instruct_lora/checkpoint-600'
 
 device = "cuda" 
 # the device to load the model onto
@@ -12,6 +13,7 @@ model = AutoModelForCausalLM.from_pretrained(
     torch_dtype="auto",
     device_map="auto"
 )
+model = PeftModel.from_pretrained(model, model_id=lora_path)
 tokenizer = AutoTokenizer.from_pretrained(model_dir)
 
 

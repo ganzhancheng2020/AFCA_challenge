@@ -2,6 +2,8 @@
 from modelscope import snapshot_download
 from modelscope import AutoModelForCausalLM, AutoTokenizer
 from prompt_template import get_sys_prompt
+from peft import PeftModel
+
 model_dir = snapshot_download('qwen/Qwen2-7B-Instruct')
 lora_path = './output/Qwen2_instruct_lora/checkpoint-600'
 
@@ -15,6 +17,9 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 model = PeftModel.from_pretrained(model, model_id=lora_path)
 tokenizer = AutoTokenizer.from_pretrained(model_dir)
+
+#device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+#model.to(device)
 
 
 def qwen_response(prompt):

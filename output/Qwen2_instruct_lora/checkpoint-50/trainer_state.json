@@ -1,0 +1,48 @@
+{
+  "best_metric": 0.31358057260513306,
+  "best_model_checkpoint": "./output/Qwen2_instruct_lora/checkpoint-50",
+  "epoch": 0.16,
+  "eval_steps": 50,
+  "global_step": 50,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 0.16,
+      "grad_norm": 0.67578125,
+      "learning_rate": 9.465811965811966e-05,
+      "loss": 0.0501,
+      "step": 50
+    },
+    {
+      "epoch": 0.16,
+      "eval_loss": 0.31358057260513306,
+      "eval_runtime": 101.5175,
+      "eval_samples_per_second": 9.851,
+      "eval_steps_per_second": 2.463,
+      "step": 50
+    }
+  ],
+  "logging_steps": 50,
+  "max_steps": 936,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 3,
+  "save_steps": 50,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": false
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 1.1844309196468224e+16,
+  "train_batch_size": 4,
+  "trial_name": null,
+  "trial_params": null
+}

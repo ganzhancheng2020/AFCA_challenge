@@ -28,8 +28,8 @@ def read_jsonl(path):
 
 
 # write result
-def write_jsonl(results,submission_id):
-    with open(f'result{submission_id}.json', 'w',encoding='utf-8') as outfile:
+def write_jsonl(results, filename):
+    with open(f'result/{filename}.json', 'w',encoding='utf-8') as outfile:
         for entry in results:
             json.dump(entry, outfile, ensure_ascii=False)
             outfile.write('\n')

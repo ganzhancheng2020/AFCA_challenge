@@ -6,7 +6,8 @@ def get_input_template(name,clause,query):
     input_template = '''\
 产品名称："""{}"""
 保险条款："""{}"""
-用户问题："""{}"""\
+用户问题："""{}"""
+回答:\
 '''
     return input_template.format(name,clause,query)
 

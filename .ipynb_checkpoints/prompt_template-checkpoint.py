@@ -17,7 +17,7 @@ def get_qa_prompt(name,clause,query):
 产品名称："""{}"""
 保险条款："""{}"""
 用户问题："""{}"""
-回答规则："""仅使用产品名称及保险条款中的语句回答问题"""
+回答规则："""仅使用产品名称及保险条款中的语句回答问题，并保持精炼。"""
 回答:\
 '''
     return qa_prompt.format(name,clause,query)

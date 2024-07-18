@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 
 model_dir = snapshot_download('qwen/Qwen2-7B-Instruct')
-lora_path = './output/Qwen2_instruct_lora/checkpoint-600'
+lora_path = './output/Qwen2_instruct_lora/20240716/checkpoint-800'
 
 device = "cuda" 
 # the device to load the model onto

@@ -9,9 +9,9 @@ logger = logging.getLogger(__name__)
 
 
 model_dir = snapshot_download('qwen/Qwen2-7B-Instruct')
-lora_path = './output/Qwen2_instruct_lora/checkpoint-600'
+lora_path = './output/Qwen2_instruct_lora/20240720/checkpoint-500'
 
-device = "cuda" 
+device = "cuda"
 # the device to load the model onto
 
 model = AutoModelForCausalLM.from_pretrained(
@@ -29,7 +29,7 @@ else:
     logger.debug("Select CPU device")
     device = torch.device("cpu")
 
-model.to(device)
+#model.to(device)
 
 tokenizer = AutoTokenizer.from_pretrained(model_dir)
 

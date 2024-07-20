@@ -3,10 +3,11 @@ python-dotenv
 dashscope
 jsonlines
 tqdm
-transformers>=4.39.0
+transformers==4.39.0
 streamlit==1.24.0
 sentencepiece==0.1.99
 accelerate==0.27
 transformers_stream_generator==0.0.4
 datasets==2.13.0
 peft==0.10.0
+tf-keras

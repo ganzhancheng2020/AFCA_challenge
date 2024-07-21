@@ -37,10 +37,10 @@ tokenizer = AutoTokenizer.from_pretrained(model_dir)
 #model.to(device)
 
 
-def qwen_response(prompt):
+def qwen_response(prompt,sys_prompt=get_sys_prompt()):
 
     messages = [
-        {"role": "system", "content": get_sys_prompt()},
+        {"role": "system", "content": sys_prompt},
         {"role": "user", "content": prompt}
     ]
     text = tokenizer.apply_chat_template(
@@ -52,7 +52,8 @@ def qwen_response(prompt):
 
     generated_ids = model.generate(
         model_inputs.input_ids,
-        max_new_tokens=512
+        max_new_tokens=512,
+        temperature=0.1
     )
     generated_ids = [
         output_ids[len(input_ids):] for input_ids, output_ids in zip(model_inputs.input_ids, generated_ids)

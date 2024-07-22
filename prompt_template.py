@@ -26,16 +26,17 @@ def get_qa_prompt(name,clause,query):
 # 回答用户问题时，严格依据产品名称和保险条款中的内容提供精确且清晰的回答。如果在保险条款中找不到答案，告诉用户"段落内容中并未提供具体答案"，并描述保险条裤中所提及的内容。
 # 仅使用产品名称及保险条款中的语句回答问题，并保持精炼。
 # 回答用户问题时，严格依据产品名称和保险条款中内容提供精确且清晰的回答。如果保险条款中未能找到相关的解答，回答段落内容中没有具体信息。
-    return qa_prompt.format(name,clause,query)
+    return qa_prompt.format(name, clause, query)
 
 
-def re_query(query):
+def get_re_query_prompt(name, clause, query):
     re_query_prompt = '''\
+产品名称："""{}"""
+保险条款："""{}"""
 用户问题："""{}"""
-回答规则："""重新表述并扩展用户问题，确保问题表述清晰且全面"""
-回答:\
+鉴于上面的用户问题，请你重新措辞并加以扩展，以帮助你做出更好的回答。保持原问题中的所有信息不变。直接输出重述后的问题。\
 '''
-    return re_query_prompt.format(query)
+    return re_query_prompt.format(name, clause, query)
 
 
 def get_refine_prompt(query, answer, clause, name):

@@ -29,3 +29,4 @@ llama-index-readers-llama-parse==0.1.4
 llama-index-vector-stores-qdrant==0.2.0
 llama-parse==0.4.1
 llamaindex-py-client==0.1.18
+llama-index-retrievers-bm25

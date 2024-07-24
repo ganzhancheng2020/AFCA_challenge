@@ -29,8 +29,6 @@ else:
     logger.debug("Select CPU device")
     device = torch.device("cpu")
 
-#model.to(device)
-
 tokenizer = AutoTokenizer.from_pretrained(model_dir)
 
 #device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
